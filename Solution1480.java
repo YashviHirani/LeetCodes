@@ -10,7 +10,6 @@ class Solution1480 {
             sum = sum+nums[i];
             nums[i] = sum;
         }
-        System.out.println(Arrays.toString(nums));
         return nums;
     }
 
