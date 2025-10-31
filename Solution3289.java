@@ -11,7 +11,7 @@ public class Solution3289 {
                 if(j==2) break;
             }
             else freq[num]++;
-        }
+        }  
         return ans;
     }
 }
