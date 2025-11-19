@@ -16,5 +16,5 @@ public class Solution2154 {
             original = original*2;
         }
         return original;
-    }
+    } 
 }
