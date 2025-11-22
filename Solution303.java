@@ -9,7 +9,6 @@ class NumArray {
         for(int i = 1; i<nums.length; i++){
             nums1[i] = nums1[i-1]+nums[i];
         }
-        System.out.println(Arrays.toString(nums));
     }
     public int sumRange(int left, int right) {
         if(left==0) return nums1[right];
