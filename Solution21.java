@@ -1,35 +1,1 @@
-//class ListNode {
-//    int val;
-//    ListNode next;
-//    ListNode() {}
-//    ListNode(int val) { this.val = val; }
-//    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-//}
-public class Solution21 {
-    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-
-        if((list1==null)&&(list2==null)){
-            return list1;
-        }
-        if(((list1==null)&&(list2.next==null))){
-            return list2;
-        }
-        if(((list2==null)&&(list1.next==null))){
-            return list1;
-        }
-
-        ListNode temp1 = list1;
-        ListNode temp2 = list2;
-
-        while(temp1!=null && temp2!=null){
-            if(temp2.val>temp1.val){
-                ListNode see = temp1;
-                temp1.val = temp2.val;
-                temp2.val = see.val;
-            }
-            temp1 = temp1.next;
-            temp2 = temp2.next;
-        }
-        return list1;
-    }
-}
+//class ListNode {//    int val;//    ListNode next;//    ListNode() {}//    ListNode(int val) { this.val = val; }//    ListNode(int val, ListNode next) { this.val = val; this.next = next; }//}public class Solution21 {    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {        // 1 5 7 9        // -1 2 8 10 12        //  a        // 0        ListNode ans = new ListNode(0);        ListNode temp = ans;        ListNode t1 = list1;        ListNode t2 = list2;        while(t1!=null && t2!=null){            if(t1.val>t2.val){                ans.next = t2;                ans = ans.next;                t2 = t2.next;            }            else {                ans.next = t1;                ans = ans.next;                t1 = t1.next;            }        }        while(t1!=null){            ans.next = t1;            ans = ans.next;            t1 = t1.next;        }        while(t2!=null){            ans.next = t2;            ans = ans.next;            t2 = t2.next;        }        return temp.next;    }}
